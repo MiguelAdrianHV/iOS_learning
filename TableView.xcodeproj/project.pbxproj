@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F3A604162AE8935700E10E08 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A604152AE8935700E10E08 /* MovieDetailViewController.swift */; };
 		F3AF7DC42AE0A26F005DBE16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AF7DC32AE0A26F005DBE16 /* AppDelegate.swift */; };
 		F3AF7DC62AE0A26F005DBE16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AF7DC52AE0A26F005DBE16 /* SceneDelegate.swift */; };
 		F3AF7DC82AE0A26F005DBE16 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AF7DC72AE0A26F005DBE16 /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F3A604152AE8935700E10E08 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		F3AF7DC02AE0A26F005DBE16 /* TableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3AF7DC32AE0A26F005DBE16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3AF7DC52AE0A26F005DBE16 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			children = (
 				F3AF7DC72AE0A26F005DBE16 /* ViewController.swift */,
 				F3B9D80B2AE31633007AFE60 /* FirstSolutionTableViewCell.swift */,
+				F3A604152AE8935700E10E08 /* MovieDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				F3B9D80C2AE31633007AFE60 /* FirstSolutionTableViewCell.swift in Sources */,
 				F3AF7DC42AE0A26F005DBE16 /* AppDelegate.swift in Sources */,
 				F3AF7DF42AE0A4D3005DBE16 /* RowForSectionACell.swift in Sources */,
+				F3A604162AE8935700E10E08 /* MovieDetailViewController.swift in Sources */,
 				F3AF7DC62AE0A26F005DBE16 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

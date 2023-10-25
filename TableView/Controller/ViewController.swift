@@ -89,7 +89,14 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        print("Movie Selected: \(movies[indexPath.row].name)")
+        let movieSelected = sections[indexPath.section].movies[indexPath.row]
+        
+        guard let viewControler = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MovieDetailViewController") as?
+                MovieDetailViewController else {
+            return
+        }
+        viewControler.movie = movieSelected
+        self.navigationController?.pushViewController(viewControler, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
