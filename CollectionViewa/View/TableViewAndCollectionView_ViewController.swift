@@ -32,6 +32,7 @@ private extension TableViewAndCollectionView_ViewController {
     
     func configureView() {
         tableView.dataSource = self
+        
         tableView.reloadData()
     }
 }
@@ -48,9 +49,23 @@ extension TableViewAndCollectionView_ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath) as! MovieTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieTableViewCell", for: indexPath) as! MovieTableViewCell
+        cell.delegate = self
         cell.configCell(with: movies)
         return cell
     }
+    
+}
+
+// MARK: - Delegate
+extension TableViewAndCollectionView_ViewController: MovieTableViewCellDelegate {
+    func tableViewCell(_ tableViewCell: MovieTableViewCell, didSelectMovie movie: Movie) {
+        print(movie)
+        
+        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MovieDetailViewController") as! MovieDetailViewController
+        viewController.movie = movie
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
     
 }
