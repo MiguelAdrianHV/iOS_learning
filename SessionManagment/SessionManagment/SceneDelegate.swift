@@ -10,6 +10,10 @@ import UIKit
 @available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
+    private lazy var serviceProvider: AppServiceProvider = {
+        return AppServiceProvider()
+    }()
+    
     var window: UIWindow?
 
 
@@ -69,10 +73,9 @@ extension SceneDelegate {
 private extension SceneDelegate {
     
     func runLoginView() {
-        
-        guard let viewController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController else {
-            return
-        }
+        let viewModel = LoginViewModel(serviceProvider: serviceProvider)
+        let viewController = LoginViewController.instantiate()
+        viewController.viewModel = viewModel
         
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.navigationBar.isHidden = true
@@ -82,9 +85,9 @@ private extension SceneDelegate {
     
     func runHomeView() {
         
-        guard let viewController = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController else {
-            return
-        }
+        let viewModel = HomeViewModel(serviceProvider: serviceProvider)
+        let viewController = HomeViewController.instantiate()
+        viewController.viewModel = viewModel
         
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.navigationBar.isHidden = true
