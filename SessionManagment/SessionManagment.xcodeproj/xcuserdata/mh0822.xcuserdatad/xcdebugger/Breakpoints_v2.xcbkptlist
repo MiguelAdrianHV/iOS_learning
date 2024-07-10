@@ -18,38 +18,6 @@
             endingLineNumber = "70"
             landmarkName = "removeAnimation()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "9A6E4ADA-737B-4A0F-8D75-157A0B016328 - ddd756bef2ce8c33"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SessionManagment.HomeViewController.removeAnimation() -&gt; ()"
-                  moduleName = "SessionManagment"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mh0822/Desktop/repos/otros/SessionManagment/SessionManagment/Home/View/HomeViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "60">
-               </Location>
-               <Location
-                  uuid = "9A6E4ADA-737B-4A0F-8D75-157A0B016328 - 9a7f0f4a26e29a07"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in SessionManagment.HomeViewController.removeAnimation() -&gt; ()"
-                  moduleName = "SessionManagment"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mh0822/Desktop/repos/otros/SessionManagment/SessionManagment/Home/View/HomeViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "76">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -66,53 +34,6 @@
             endingLineNumber = "44"
             landmarkName = "request(_:router:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "638D9B07-6CCC-4550-83C8-5CC3E79F5ED0 - 3320fbd809fd2d64"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for SessionManagment.NetworkingService.BaseAPICLient.request&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(_: &#x3c4;_1_0.Type, router: &#x3c4;_0_0) async throws -&gt; &#x3c4;_1_0"
-                  moduleName = "SessionManagment"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mh0822/Desktop/repos/otros/SessionManagment/SessionManagment/Services/Networking/NetworkingService+BaseAPIClient.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "248">
-               </Location>
-               <Location
-                  uuid = "638D9B07-6CCC-4550-83C8-5CC3E79F5ED0 - c785dcf8ea06f162"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for SessionManagment.NetworkingService.BaseAPICLient.request&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(_: &#x3c4;_1_0.Type, router: &#x3c4;_0_0) async throws -&gt; &#x3c4;_1_0"
-                  moduleName = "SessionManagment"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mh0822/Desktop/repos/otros/SessionManagment/SessionManagment/Services/Networking/NetworkingService+BaseAPIClient.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "412">
-               </Location>
-               <Location
-                  uuid = "638D9B07-6CCC-4550-83C8-5CC3E79F5ED0 - bdab4e6934335361"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(4) suspend resume partial function for SessionManagment.NetworkingService.BaseAPICLient.request&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(_: &#x3c4;_1_0.Type, router: &#x3c4;_0_0) async throws -&gt; &#x3c4;_1_0"
-                  moduleName = "SessionManagment"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mh0822/Desktop/repos/otros/SessionManagment/SessionManagment/Services/Networking/NetworkingService+BaseAPIClient.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "44">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -182,6 +103,22 @@
             breakpointStackSelectionBehavior = "1"
             scope = "1"
             stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "006BBEDC-2084-4FA4-A835-1DE682201248"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SessionManagment/Home/ViewModel/TourCellViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "handleFavoriteSelection()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
