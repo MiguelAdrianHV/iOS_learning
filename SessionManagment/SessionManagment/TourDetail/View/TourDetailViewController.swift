@@ -1,0 +1,141 @@
+//
+//  TourDetailViewController.swift
+//  SessionManagment
+//
+//  Created by Miguel Hernandez on 2/21/24.
+//
+
+import Foundation
+import UIKit
+
+class TourDetailViewController: UIViewController {
+    
+    @IBOutlet private var titleLabel: UILabel!
+    @IBOutlet private var ratingLabel: UILabel!
+    @IBOutlet private var priceLabel: UILabel!
+    @IBOutlet private var bookButton: UIButton!
+    @IBOutlet private var backgroundImage: UIImageView!
+    @IBOutlet private var favoriteButton: UIButton!
+    @IBOutlet private var favoriteImage: UIImageView!
+    @IBOutlet private var favoriteView: UIView!
+    @IBOutlet private var readMoreButton: UIButton!
+    @IBOutlet private var descriptionLabel: UILabel!
+    @IBOutlet private var internetView: UIView!
+    @IBOutlet private var dinnerView: UIView!
+    @IBOutlet private var tubView: UIView!
+    @IBOutlet private var poolView: UIView!
+    
+    private var bindings = Bindings()
+    
+    var viewModel: TourDetailViewModel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        guard viewModel != nil else {
+            assertionFailure("`viewModel` is required for \(Self.self) to work.")
+            return
+        }
+        
+        configureView()
+        configureBindings()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
+}
+
+// MARK: - Private Methods
+private extension TourDetailViewController {
+    
+    func configureView() {
+        readMoreButton.semanticContentAttribute = .forceRightToLeft
+        
+        bookButton.semanticContentAttribute = .forceRightToLeft
+        bookButton.layer.cornerRadius = 10
+        
+        backgroundImage.layer.cornerRadius = 20
+        
+        favoriteView.layer.cornerRadius = favoriteView.bounds.width / 2
+        favoriteView.clipsToBounds = true
+        
+        internetView.layer.cornerRadius = 15
+        dinnerView.layer.cornerRadius = 15
+        tubView.layer.cornerRadius = 15
+        poolView.layer.cornerRadius = 15
+    
+    }
+    
+    func configureBindings() {
+        viewModel.$titleText
+            .assign(to: \.text, on: titleLabel)
+            .store(in: &bindings)
+        
+        viewModel.$reviewText
+            .assign(to: \.text, on: ratingLabel)
+            .store(in: &bindings)
+        
+        viewModel.$priceText
+            .assign(to: \.text, on: priceLabel)
+            .store(in: &bindings)
+        
+        viewModel.$imageURL
+            .sink{ [backgroundImage] in
+                backgroundImage?.kf.setImage(with: $0, options: [.cacheOriginalImage, .transition(.fade(1))])
+                backgroundImage?.kf.indicatorType = .activity
+            }
+            .store(in: &bindings)
+        
+        
+        viewModel.$descriptionText
+            .assign(to: \.text, on: descriptionLabel)
+            .store(in: &bindings)
+        
+        viewModel.$descriptionTextNumberOfLines
+            .sink{ [descriptionLabel] in
+                descriptionLabel?.numberOfLines = $0 ?? 4
+            }
+            .store(in: &bindings)
+        
+        viewModel.$isReadMoreButtonTapped
+            .sink{ [readMoreButton] in
+                let imageName = $0 ? UIImage(named: "ArrowUp") : UIImage(named: "ArrowDown")
+                readMoreButton?.setImage(imageName, for: .normal)
+            }
+            .store(in: &bindings)
+        
+        viewModel.$isFavoriteButtonSelected
+            .sink{ [favoriteImage] in
+                favoriteImage?.image = UIImage(named: "Favorite")
+                favoriteImage?.tintColor = $0 ? .red : .lightGray
+            }
+            .store(in: &bindings)
+    }
+}
+
+// MARK: - Action Methods
+extension TourDetailViewController {
+    
+    @IBAction func didTapButton(_ sender: Any) {
+        print("Button Selected")
+    }
+    
+    @IBAction func didTapBackButton(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func didTapReadMoreButton(_ sender: Any) {
+        viewModel.handleReadMoreSelection()
+    }
+    
+    @IBAction func didTapFavoriteButton(_ sender: Any) {
+        viewModel.handlerFavoriteButtonSelection()
+    }
+}
+
+// MARK: - StoryboardInitializable
+extension TourDetailViewController: StoryboardInitializable {
+    static let storyboardName = "TourDetail"
+}

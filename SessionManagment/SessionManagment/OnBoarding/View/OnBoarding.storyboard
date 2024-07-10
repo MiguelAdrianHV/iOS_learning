@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--OnBoardingViewController-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="OnBoardingViewController" title="OnBoardingViewController" id="Y6W-OH-hqX" customClass="OnBoardingViewController" customModule="SessionManagment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="aSs-0m-i3b">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Aspen" translatesAutoresizingMaskIntoConstraints="NO" id="23s-0b-51d">
+                                <rect key="frame" x="55" y="99" width="283" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="vYy-AO-w0b"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Plan your Luxurious Vacation" translatesAutoresizingMaskIntoConstraints="NO" id="9MA-xd-du5">
+                                <rect key="frame" x="55" y="589" width="283" height="109"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2J-SL-3SV">
+                                <rect key="frame" x="55" y="728" width="283" height="50"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="yIf-s4-noh"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Explore">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="didTapExploreButton" destination="Y6W-OH-hqX" eventType="touchUpInside" id="pdM-DX-P8n"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9MA-xd-du5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="55" id="5my-0t-KBm"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="23s-0b-51d" secondAttribute="trailing" constant="55" id="5qy-Ha-t4l"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="P2J-SL-3SV" secondAttribute="trailing" constant="55" id="E7l-5v-2Pi"/>
+                            <constraint firstItem="aSs-0m-i3b" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="GcH-te-Bhb"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="P2J-SL-3SV" secondAttribute="bottom" constant="40" id="HWm-h2-KCa"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="9MA-xd-du5" secondAttribute="trailing" constant="55" id="QeW-t7-111"/>
+                            <constraint firstItem="23s-0b-51d" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="55" id="bIJ-dH-l6h"/>
+                            <constraint firstAttribute="bottom" secondItem="aSs-0m-i3b" secondAttribute="bottom" id="cFa-H6-Aj7"/>
+                            <constraint firstItem="23s-0b-51d" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="40" id="cJT-m1-slG"/>
+                            <constraint firstItem="aSs-0m-i3b" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="co8-hp-3fD"/>
+                            <constraint firstItem="P2J-SL-3SV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="55" id="hRh-O2-AFe"/>
+                            <constraint firstItem="P2J-SL-3SV" firstAttribute="top" secondItem="9MA-xd-du5" secondAttribute="bottom" constant="30" id="pLR-r1-lEu"/>
+                            <constraint firstItem="aSs-0m-i3b" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="rNl-Pm-d3Q"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="exploreButton" destination="P2J-SL-3SV" id="bam-ph-eST"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="129.00763358778624" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Aspen" width="278" height="108"/>
+        <image name="Background" width="375" height="812"/>
+        <image name="Plan your Luxurious Vacation" width="199" height="109"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

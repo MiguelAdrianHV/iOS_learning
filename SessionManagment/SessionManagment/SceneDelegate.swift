@@ -14,6 +14,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         return AppServiceProvider()
     }()
     
+    private lazy var tabBarController = TabBarController(serviceProvider: serviceProvider)
     var window: UIWindow?
 
 
@@ -24,7 +25,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
      
             window = UIWindow(windowScene: windowScene)
-            validateUserSession()
+//            validateUserSession()
+            let viewController = OnBoardingViewController.instantiate()
+            let navigationController = UINavigationController(rootViewController: viewController)
+            navigationController.navigationBar.isHidden = true
+            window?.rootViewController = navigationController
+            self.window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -62,10 +68,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 extension SceneDelegate {
     func validateUserSession() {
         if UserDefaults.standard.bool(forKey: "isLogged") {
-            runHomeView()
+            runTabBarController()
         } else {
             runLoginView()
         }
+    }
+    
+    func selectTabBarItem(withIndex Index: Int) {
+        tabBarController.selectedIndex = Index
     }
 }
 
@@ -83,15 +93,10 @@ private extension SceneDelegate {
         self.window?.makeKeyAndVisible()
     }
     
-    func runHomeView() {
+    func runTabBarController() {
         
-        let viewModel = HomeViewModel(serviceProvider: serviceProvider)
-        let viewController = HomeViewController.instantiate()
-        viewController.viewModel = viewModel
-        
-        let navigationController = UINavigationController(rootViewController: viewController)
-        navigationController.navigationBar.isHidden = true
-        window?.rootViewController = navigationController
+        tabBarController.selectedIndex = 0
+        window?.rootViewController = tabBarController
         self.window?.makeKeyAndVisible()
     }
 }
